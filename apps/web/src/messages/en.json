@@ -1,0 +1,98 @@
+{
+  "meta": {
+    "title": "Multi Technology Company | Telecom & IT Solutions",
+    "description": "Leading Telecom and IT solutions provider in Saudi Arabia since 2004. Network Infrastructure, GSM/IBS, Security Solutions, and Managed Services."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "projects": "Projects",
+    "partners": "Partners & Solutions",
+    "media": "Media",
+    "blog": "Blog",
+    "careers": "Careers",
+    "contact": "Contact Us",
+    "getQuote": "Get a Quote"
+  },
+  "hero": {
+    "title": "Building Saudi Arabia's",
+    "titleHighlight": "Digital Infrastructure",
+    "subtitle": "End-to-end Telecom and IT solutions powering the Kingdom's connected future since 2004.",
+    "cta": "Explore Our Services",
+    "ctaSecondary": "Contact Us"
+  },
+  "about": {
+    "sectionTitle": "About Multitech",
+    "description": "Established in 2004, Multi Technology Company is a premier Telecom and IT solutions provider delivering world-class infrastructure across Saudi Arabia.",
+    "learnMore": "Learn More About Us",
+    "vision": "Vision",
+    "visionText": "To be the leading provider of innovative telecom and IT infrastructure solutions in the Kingdom of Saudi Arabia.",
+    "mission": "Mission",
+    "missionText": "Delivering reliable, cutting-edge technology solutions that empower businesses and drive digital transformation across the Kingdom."
+  },
+  "services": {
+    "sectionTitle": "Our Services",
+    "subtitle": "Comprehensive Telecom and IT solutions tailored to your needs",
+    "viewAll": "View All Services",
+    "networkInfra": "Network Infrastructure",
+    "networkInfraDesc": "Design, build, and maintain robust network infrastructure for enterprise and carrier-grade deployments.",
+    "gsmIbs": "GSM & IBS Solutions",
+    "gsmIbsDesc": "In-Building Solutions and GSM coverage optimization for seamless indoor connectivity.",
+    "fttx": "FTTx & OSP",
+    "fttxDesc": "Fiber-to-the-X and Outside Plant engineering for next-generation broadband networks.",
+    "managedServices": "Managed Services",
+    "managedServicesDesc": "24/7 network monitoring, maintenance, and operational support to keep your infrastructure running.",
+    "security": "Security Solutions",
+    "securityDesc": "CCTV, Access Control, Intrusion Detection, and integrated security systems for comprehensive protection.",
+    "consulting": "IT Consulting",
+    "consultingDesc": "Strategic technology advisory to align your IT investments with business objectives."
+  },
+  "stats": {
+    "years": "Years of Experience",
+    "projects": "Projects Completed",
+    "clients": "Clients Served",
+    "engineers": "Engineers on Team"
+  },
+  "partners": {
+    "sectionTitle": "Our Partners",
+    "subtitle": "Trusted by leading global technology brands"
+  },
+  "projects": {
+    "sectionTitle": "Featured Projects",
+    "subtitle": "Delivering excellence across the Kingdom",
+    "viewAll": "View All Projects"
+  },
+  "testimonials": {
+    "sectionTitle": "What Our Clients Say"
+  },
+  "cta": {
+    "title": "Ready to Transform Your Infrastructure?",
+    "subtitle": "Let's discuss how Multitech can power your next project.",
+    "button": "Get in Touch"
+  },
+  "contact": {
+    "sectionTitle": "Contact Us",
+    "name": "Full Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "subject": "Subject",
+    "message": "Your Message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully! We'll get back to you soon.",
+    "error": "Something went wrong. Please try again.",
+    "address": "Address",
+    "workingHours": "Working Hours",
+    "followUs": "Follow Us"
+  },
+  "footer": {
+    "description": "Leading Telecom and IT solutions provider in Saudi Arabia since 2004.",
+    "quickLinks": "Quick Links",
+    "contactInfo": "Contact Info",
+    "newsletter": "Newsletter",
+    "newsletterPlaceholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "rights": "All rights reserved."
+  }
+}

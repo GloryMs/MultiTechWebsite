@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+/* ─── Design Tokens (Multitech Brand) ─────────────────────── */
+@theme {
+  --color-brand-primary: #0A1628;
+  --color-brand-accent: #00D4AA;
+  --color-brand-gold: #D4A843;
+  --color-brand-bg: #F8FAFC;
+  --color-brand-text: #64748B;
+  --color-brand-error: #EF4444;
+
+  --color-brand-primary-light: #122040;
+  --color-brand-accent-dark: #00B892;
+  --color-brand-accent-glow: rgba(0, 212, 170, 0.15);
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-heading: 'DM Sans', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-arabic: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+/* ─── Base Styles ─────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-brand-primary);
+  background-color: var(--color-brand-bg);
+}
+
+/* Arabic font override */
+html[lang="ar"] body {
+  font-family: var(--font-arabic);
+}
+
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4,
+html[lang="ar"] h5,
+html[lang="ar"] h6 {
+  font-family: var(--font-arabic);
+}
+
+/* ─── Geometric Pattern Overlay (reusable) ────────────────── */
+.geo-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='none' stroke='%2300D4AA' stroke-width='0.5' opacity='0.08'/%3E%3C/svg%3E");
+}
+
+/* ─── Selection Color ─────────────────────────────────────── */
+::selection {
+  background-color: var(--color-brand-accent);
+  color: var(--color-brand-primary);
+}
+
+/* ─── Scrollbar (Webkit) ──────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-brand-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-accent);
+  border-radius: 4px;
+}
+
+/* ─── Utility Animations ──────────────────────────────────── */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(0, 212, 170, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(0, 212, 170, 0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}

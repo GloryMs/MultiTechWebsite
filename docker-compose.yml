@@ -1,0 +1,46 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: multitech-db
+    environment:
+      POSTGRES_DB: multitech
+      POSTGRES_USER: multitech_user
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-multitech_secret_2026}
+    ports:
+      - '5432:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U multitech_user -d multitech']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  strapi:
+    build: ./apps/cms
+    container_name: multitech-cms
+    environment:
+      DATABASE_CLIENT: postgres
+      DATABASE_HOST: postgres
+      DATABASE_PORT: 5432
+      DATABASE_NAME: multitech
+      DATABASE_USERNAME: multitech_user
+      DATABASE_PASSWORD: ${POSTGRES_PASSWORD:-multitech_secret_2026}
+      APP_KEYS: ${STRAPI_APP_KEYS:-toBeGenerated1,toBeGenerated2,toBeGenerated3,toBeGenerated4}
+      API_TOKEN_SALT: ${STRAPI_API_TOKEN_SALT:-toBeGenerated}
+      ADMIN_JWT_SECRET: ${STRAPI_ADMIN_JWT_SECRET:-toBeGenerated}
+      JWT_SECRET: ${STRAPI_JWT_SECRET:-toBeGenerated}
+    ports:
+      - '1337:1337'
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./apps/cms:/srv/app
+      - cms_node_modules:/srv/app/node_modules
+
+volumes:
+  pgdata:
+  cms_node_modules:

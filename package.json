@@ -1,0 +1,19 @@
+{
+  "name": "multitech-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Multi Technology Company - Corporate Website (Arabic/English)",
+  "scripts": {
+    "dev:web": "cd apps/web && npm run dev",
+    "dev:api": "cd apps/api && npm run dev",
+    "build:web": "cd apps/web && npm run build",
+    "build:api": "cd apps/api && npm run build",
+    "lint": "cd apps/web && npm run lint",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down",
+    "docker:logs": "docker compose logs -f"
+  },
+  "keywords": ["multitech", "nextjs", "strapi", "bilingual", "rtl"],
+  "author": "Multi Technology Company",
+  "license": "UNLICENSED"
+}
