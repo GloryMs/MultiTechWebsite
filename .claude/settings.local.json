@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls c:/Projects/multitech-website/apps/web/src/app/[locale]/blog/)",
+      "Bash(ls c:/Projects/multitech-website/apps/api/.env*)"
+    ]
+  }
+}

@@ -56,12 +56,54 @@
   },
   "partners": {
     "sectionTitle": "Our Partners",
-    "subtitle": "Trusted by leading global technology brands"
+    "subtitle": "Trusted by leading global technology brands",
+    "pageTitle": "Partners & Solutions",
+    "pageSubtitle": "We partner with the world's leading technology brands to deliver best-in-class solutions",
+    "strategic": "Strategic Partners",
+    "technology": "Technology Partners",
+    "solution": "Solution Partners",
+    "visitWebsite": "Visit Website",
+    "home": "Home"
   },
   "projects": {
     "sectionTitle": "Featured Projects",
     "subtitle": "Delivering excellence across the Kingdom",
-    "viewAll": "View All Projects"
+    "viewAll": "View All Projects",
+    "pageTitle": "Our Projects",
+    "pageSubtitle": "Over 500 successful projects in Telecom and IT infrastructure",
+    "all": "All",
+    "client": "Client",
+    "home": "Home",
+    "noProjects": "No projects found."
+  },
+  "careers": {
+    "pageTitle": "Careers",
+    "pageSubtitle": "Join our team and be part of the future of Telecom and IT in the Kingdom",
+    "noJobs": "No open positions at the moment. Check back for new opportunities.",
+    "fullTime": "Full-time",
+    "partTime": "Part-time",
+    "contract": "Contract",
+    "apply": "Apply Now",
+    "department": "Department",
+    "location": "Location",
+    "home": "Home",
+    "whyTitle": "Why Multitech?",
+    "benefit1Title": "High-Impact Projects",
+    "benefit1Desc": "Work on national infrastructure projects shaping the future of connectivity in the Kingdom.",
+    "benefit2Title": "Professional Growth",
+    "benefit2Desc": "Continuous training programs and certifications with leading global vendors.",
+    "benefit3Title": "Collaborative Culture",
+    "benefit3Desc": "A team of 200+ engineers who share a passion for technical excellence."
+  },
+  "media": {
+    "pageTitle": "Media Gallery",
+    "pageSubtitle": "A visual showcase of our projects and field work",
+    "all": "All",
+    "home": "Home",
+    "noMedia": "No media items yet. Check back soon.",
+    "close": "Close",
+    "prev": "Previous",
+    "next": "Next"
   },
   "testimonials": {
     "sectionTitle": "What Our Clients Say"
@@ -85,6 +127,16 @@
     "address": "Address",
     "workingHours": "Working Hours",
     "followUs": "Follow Us"
+  },
+  "blog": {
+    "pageTitle": "Blog",
+    "subtitle": "Latest news and technical insights from the Multitech team",
+    "readMore": "Read More",
+    "noPosts": "No posts yet. Check back soon.",
+    "home": "Home",
+    "backToBlog": "Back to Blog",
+    "publishedOn": "Published on",
+    "notFound": "Post not found."
   },
   "footer": {
     "description": "Leading Telecom and IT solutions provider in Saudi Arabia since 2004.",
