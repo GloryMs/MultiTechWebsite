@@ -1,0 +1,58 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_pages",
+  "info": {
+    "singularName": "about-page",
+    "pluralName": "about-pages",
+    "displayName": "About Page",
+    "description": "Content for the About Us page: story, vision, mission, timeline, values, and team"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "story_p1": {
+      "type": "text",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "story_p2": {
+      "type": "text",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "story_p3": {
+      "type": "text",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "vision_text": {
+      "type": "text",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "mission_text": {
+      "type": "text",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "timeline": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about.timeline-item",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "core_values": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about.core-value",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "team_members": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about.team-member",
+      "pluginOptions": { "i18n": { "localized": true } }
+    }
+  }
+}
