@@ -99,6 +99,7 @@ export default function Footer() {
                 type="email"
                 placeholder={t('newsletterPlaceholder')}
                 className="flex-1 rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white placeholder-white/40 transition-colors focus:border-brand-accent focus:outline-none"
+                suppressHydrationWarning
               />
               <button
                 type="submit"

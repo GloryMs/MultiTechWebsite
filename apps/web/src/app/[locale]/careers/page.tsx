@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import Navbar from '@/components/layout/Navbar';
@@ -5,10 +6,17 @@ import Footer from '@/components/layout/Footer';
 import PageHero from '@/components/ui/PageHero';
 import SectionWrapper from '@/components/ui/SectionWrapper';
 import { getJobOpenings } from '@/lib/strapi';
+import { buildMetadata } from '@/lib/seo';
 import type { StrapiJobOpening } from '@/lib/strapi';
 
 interface Props {
   params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'careers' });
+  return buildMetadata({ locale, path: '/careers', title: t('pageTitle'), description: t('pageSubtitle') });
 }
 
 const TYPE_COLORS = {

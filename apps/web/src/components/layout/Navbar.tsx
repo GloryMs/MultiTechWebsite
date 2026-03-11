@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 import LanguageSwitcher from './LanguageSwitcher';
 import Button from '../ui/Button';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const NAV_KEYS = ['home', 'about', 'services', 'projects', 'partners', 'media', 'blog', 'contact'] as const;
 
@@ -51,22 +52,20 @@ export default function Navbar() {
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           {/* Logo */}
-          <Link href={`/${locale}`} className="flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-accent">
-              <span className="text-lg font-bold text-brand-primary">M</span>
-            </div>
-            <span className="text-xl font-bold text-white">
-              Multi<span className="text-brand-accent">tech</span>
-            </span>
+          <Link href={`/${locale}`}>
+            <Image src="/logo.png" alt="MultiTech" width={260} height={78} priority />
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden items-center gap-1 lg:flex">
+          <div className="hidden items-center gap-2 lg:flex">
             {NAV_KEYS.map((key) => (
               <Link
                 key={key}
                 href={`/${locale}${NAV_PATHS[key]}`}
-                className="rounded-lg px-3 py-2 text-sm font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white"
+                className={cn(
+                    'rounded-lg px-3 py-2 font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white whitespace-nowrap',
+                    locale === 'ar' ? 'text-lg' : 'text-sm'
+                  )}
               >
                 {t(key)}
               </Link>

@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import Navbar from '@/components/layout/Navbar';
@@ -5,10 +6,17 @@ import Footer from '@/components/layout/Footer';
 import PageHero from '@/components/ui/PageHero';
 import SectionWrapper from '@/components/ui/SectionWrapper';
 import { getBlogPosts, getStrapiMediaUrl } from '@/lib/strapi';
+import { buildMetadata } from '@/lib/seo';
 import type { StrapiBlogPost } from '@/lib/strapi';
 
 interface Props {
   params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'blog' });
+  return buildMetadata({ locale, path: '/blog', title: t('pageTitle'), description: t('subtitle') });
 }
 
 function formatDate(dateStr: string, locale: string) {

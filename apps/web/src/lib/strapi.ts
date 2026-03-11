@@ -113,6 +113,38 @@ export interface StrapiGlobalSettings {
   footer_text?: string;
 }
 
+export interface StrapiTimelineItem {
+  id: number;
+  year: string;
+  title: string;
+  description?: string;
+}
+
+export interface StrapiCoreValue {
+  id: number;
+  icon_name?: string;
+  title: string;
+  description?: string;
+}
+
+export interface StrapiTeamMember {
+  id: number;
+  name: string;
+  role?: string;
+  photo?: StrapiMedia;
+}
+
+export interface StrapiAboutPage {
+  story_p1?: string;
+  story_p2?: string;
+  story_p3?: string;
+  vision_text?: string;
+  mission_text?: string;
+  timeline?: StrapiTimelineItem[];
+  core_values?: StrapiCoreValue[];
+  team_members?: StrapiTeamMember[];
+}
+
 /* ─── Typed Fetch Functions ───────────────────────────────── */
 
 export async function getServices(locale: string): Promise<StrapiService[]> {
@@ -217,7 +249,18 @@ export async function getMediaItems(locale: string): Promise<StrapiMediaItem[]> 
       sort: 'sort_order:asc',
       pagination: { pageSize: 100 },
     });
-    return res.data ?? [];
+    const items = res.data ?? [];
+    // Fall back to English if no items exist for the requested locale
+    if (items.length === 0 && locale !== 'en') {
+      const fallback = await fetchStrapi<StrapiResponse<StrapiMediaItem[]>>({
+        endpoint: 'media-items',
+        locale: 'en',
+        sort: 'sort_order:asc',
+        pagination: { pageSize: 100 },
+      });
+      return fallback.data ?? [];
+    }
+    return items;
   } catch {
     return [];
   }
@@ -228,6 +271,24 @@ export async function getGlobalSettings(locale: string): Promise<StrapiGlobalSet
     const res = await fetchStrapi<StrapiResponse<StrapiGlobalSettings>>({
       endpoint: 'global-setting',
       locale,
+    });
+    return res.data ?? null;
+  } catch {
+    return null;
+  }
+}
+
+export async function getAboutPage(locale: string): Promise<StrapiAboutPage | null> {
+  try {
+    const res = await fetchStrapi<StrapiResponse<StrapiAboutPage>>({
+      endpoint: 'about-page',
+      locale,
+      // Strapi v5 requires explicit nested populate for component media fields
+      extraParams: {
+        'populate[timeline]': '*',
+        'populate[core_values]': '*',
+        'populate[team_members][populate]': '*',
+      },
     });
     return res.data ?? null;
   } catch {

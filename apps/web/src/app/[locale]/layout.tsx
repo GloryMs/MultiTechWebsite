@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
+import { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA } from '@/lib/seo';
 import '@/styles/globals.css';
 
 /* ─── Google Fonts via next/font ──────────────────────────── */
@@ -84,7 +85,17 @@ export default async function LocaleLayout({
       : `${dmSans.variable} ${spaceGrotesk.variable}`;
 
   return (
-    <html lang={locale} dir={dir} className={fontClass}>
+    <html lang={locale} dir={dir} className={fontClass} suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_SCHEMA) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBSITE_SCHEMA) }}
+        />
+      </head>
       <body className="min-h-screen bg-brand-bg text-brand-primary antialiased">
         <NextIntlClientProvider messages={messages}>
           {children}

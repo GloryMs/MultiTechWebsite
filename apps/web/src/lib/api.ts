@@ -6,6 +6,7 @@ interface StrapiRequestParams {
   endpoint: string;
   locale?: string;
   populate?: string;
+  extraParams?: Record<string, string>; // for nested populate (e.g. component media)
   filters?: Record<string, unknown>;
   sort?: string;
   pagination?: { page?: number; pageSize?: number };
@@ -15,13 +16,19 @@ export async function fetchStrapi<T>({
   endpoint,
   locale = 'ar',
   populate = '*',
+  extraParams,
   filters,
   sort,
   pagination,
 }: StrapiRequestParams): Promise<T> {
   const params = new URLSearchParams();
   params.set('locale', locale);
-  params.set('populate', populate);
+  if (!extraParams || !Object.keys(extraParams).some(k => k.startsWith('populate'))) {
+    params.set('populate', populate);
+  }
+  if (extraParams) {
+    Object.entries(extraParams).forEach(([key, value]) => params.set(key, value));
+  }
 
   if (sort) params.set('sort', sort);
   if (pagination?.page) params.set('pagination[page]', String(pagination.page));

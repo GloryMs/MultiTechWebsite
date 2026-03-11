@@ -28,7 +28,7 @@ export default async function HomePage({ params }: Props) {
   const [services, projects, partners, testimonials] = await Promise.all([
     getServices(locale),
     getProjects(locale, true), // featured only for homepage
-    getPartners(locale),
+    getPartners('en'), // partner names & logos are language-neutral — always use EN
     getTestimonials(locale),
   ]);
 

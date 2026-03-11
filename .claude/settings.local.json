@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(ls c:/Projects/multitech-website/apps/web/src/app/[locale]/blog/)",
-      "Bash(ls c:/Projects/multitech-website/apps/api/.env*)"
+      "Bash(ls c:/Projects/multitech-website/apps/api/.env*)",
+      "Bash(ls c:/Projects/multitech-website/apps/web/src/app/[locale]/)",
+      "Bash(docker compose -f c:/Projects/multitech-website/docker-compose.yml logs strapi --tail 60)"
     ]
   }
 }
