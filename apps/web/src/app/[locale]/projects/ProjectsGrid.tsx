@@ -25,7 +25,7 @@ interface Props {
   labels: { all: string; client: string; noProjects: string };
 }
 
-export default function ProjectsGrid({ projects, staticProjects, locale, labels }: Props) {
+export default function ProjectsGrid({ projects, staticProjects, labels }: Props) {
   const hasCms = projects && projects.length > 0;
 
   /* Build unique category list */
@@ -47,6 +47,7 @@ export default function ProjectsGrid({ projects, staticProjects, locale, labels 
           {categories.map((cat) => (
             <button
               key={cat}
+              suppressHydrationWarning
               onClick={() => setActive(cat)}
               className={cn(
                 'rounded-full px-5 py-2 text-sm font-semibold transition-all duration-200',

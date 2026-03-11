@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Dark brand background with rounded corners -->
+  <rect width="32" height="32" rx="7" fill="#0A1628"/>
+  <!-- Teal accent "M" drawn as a stroke path — readable at any size -->
+  <polyline
+    points="6,25 6,7 16,18 26,7 26,25"
+    fill="none"
+    stroke="#00D4AA"
+    stroke-width="3.2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>

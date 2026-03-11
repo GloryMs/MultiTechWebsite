@@ -82,6 +82,7 @@ export default function Navbar() {
 
           {/* Mobile Hamburger */}
           <button
+            suppressHydrationWarning
             onClick={() => setMobileOpen(!mobileOpen)}
             className="relative z-50 flex h-10 w-10 items-center justify-center rounded-lg lg:hidden"
             aria-label="Toggle menu"

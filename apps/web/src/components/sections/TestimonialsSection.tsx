@@ -99,6 +99,7 @@ export default function TestimonialsSection({ testimonials }: Props) {
           {Array.from({ length: total }).map((_, i) => (
             <button
               key={i}
+              suppressHydrationWarning
               onClick={() => setCurrent(i)}
               className={cn(
                 'h-2.5 rounded-full transition-all duration-300',

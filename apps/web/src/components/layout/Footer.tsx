@@ -102,6 +102,7 @@ export default function Footer() {
                 suppressHydrationWarning
               />
               <button
+                suppressHydrationWarning
                 type="submit"
                 className="shrink-0 rounded-lg bg-brand-accent px-4 py-2.5 text-sm font-semibold text-brand-primary transition-colors hover:bg-brand-accent-dark"
               >

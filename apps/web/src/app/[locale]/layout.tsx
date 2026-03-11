@@ -41,6 +41,14 @@ export async function generateMetadata({
     title: t('title'),
     description: t('description'),
     metadataBase: new URL('https://multitech.com.sa'),
+    icons: {
+      icon: [
+        { url: '/icon.svg', type: 'image/svg+xml' },
+        { url: '/favicon.ico', sizes: 'any' },
+      ],
+      apple: '/logo.png',
+      shortcut: '/favicon.ico',
+    },
     alternates: {
       canonical: `/${locale}`,
       languages: {
@@ -54,6 +62,7 @@ export async function generateMetadata({
       siteName: 'Multi Technology Company',
       locale: locale === 'ar' ? 'ar_SA' : 'en_US',
       type: 'website',
+      images: [{ url: '/logo.png', width: 512, height: 512 }],
     },
   };
 }
